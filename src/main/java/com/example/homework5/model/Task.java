@@ -16,7 +16,7 @@ public class Task {
     @Column(nullable = false)
     private String description;
     @Column(nullable = false)
-    private TaskStatus status;                                         // taskStatus выдаёт ошибку
+    private TaskStatus status;
     @Column
     private LocalDateTime local_date_time = LocalDateTime.now();
 
