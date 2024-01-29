@@ -35,7 +35,7 @@ public class TaskController {
      * updateTaskStatus - метод обновления задачи (статус или описание).
      */
     @PutMapping("/update/{id}")
-    public Task updateTask(@PathVariable Long id, @RequestBody Task.Status status) {
+    public Task updateTask(@PathVariable Long id, @RequestBody Task.TaskStatus status) {
         return taskService.updateStatusTask(id, status);
     }
 
@@ -51,7 +51,7 @@ public class TaskController {
      * getTasksByStatus - поиска задачи по статусу.
      */
     @GetMapping("/status/{status}")
-    public List<Task> getTasksByStatus(@PathVariable Task.Status status) {
+    public List<Task> getTasksByStatus(@PathVariable Task.TaskStatus status) {
         return taskService.getTasksByStatus(status);
     }
 

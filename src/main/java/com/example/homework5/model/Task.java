@@ -16,11 +16,11 @@ public class Task {
     @Column(nullable = false)
     private String description;
     @Column(nullable = false)
-    private Status status;                                         // taskStatus выдаёт ошибку
+    private TaskStatus status;                                         // taskStatus выдаёт ошибку
     @Column
     private LocalDateTime local_date_time = LocalDateTime.now();
 
-    public enum Status {
+    public enum TaskStatus {
         TEMP, NOT_STARTED, IN_PROGRESS, COMPLETED, DEAD // меньше 4 выкидывает ошибку java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
     }
 }

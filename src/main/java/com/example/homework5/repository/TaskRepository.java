@@ -11,5 +11,5 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
     /**
      * Получения список задач с определенным статусом.
      */
-    List<Task> getTasksByStatus(Task.Status status);
+    List<Task> getTasksByStatus(Task.TaskStatus status);
 }

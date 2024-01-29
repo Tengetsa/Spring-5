@@ -44,7 +44,7 @@ public class TaskService {
     /**
      * обновления задачи.
      */
-    public Task updateStatusTask(Long id, Task.Status status) {
+    public Task updateStatusTask(Long id, Task.TaskStatus status) {
         Optional<Task> optionalTask = taskRepository.findById(id);
         if (optionalTask.isPresent()) {
             Task task = optionalTask.get();
@@ -58,7 +58,7 @@ public class TaskService {
     /**
      * Найти задачи по статусу.
      */
-    public List<Task> getTasksByStatus(Task.Status status) {
+    public List<Task> getTasksByStatus(Task.TaskStatus status) {
         return taskRepository.getTasksByStatus(status);
     }
 }
