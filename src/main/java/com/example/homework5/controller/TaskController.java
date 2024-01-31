@@ -1,5 +1,6 @@
 package com.example.homework5.controller;
 
+import com.example.homework5.status.TaskStatus;
 import com.example.homework5.model.Task;
 import com.example.homework5.service.TaskService;
 import lombok.AllArgsConstructor;
@@ -35,8 +36,8 @@ public class TaskController {
      * updateTaskStatus - метод обновления задачи (статус или описание).
      */
     @PutMapping("/update/{id}")
-    public Task updateTask(@PathVariable Long id, @RequestBody Task.TaskStatus status) {
-        return taskService.updateStatusTask(id, status);
+    public Task updateTask(@PathVariable Long id, @RequestBody Task task) {
+        return taskService.updateStatusTask(id, task);
     }
 
     /**
@@ -51,7 +52,7 @@ public class TaskController {
      * getTasksByStatus - поиска задачи по статусу.
      */
     @GetMapping("/status/{status}")
-    public List<Task> getTasksByStatus(@PathVariable Task.TaskStatus status) {
+    public List<Task> getTasksByStatus(@PathVariable TaskStatus status) {
         return taskService.getTasksByStatus(status);
     }
 

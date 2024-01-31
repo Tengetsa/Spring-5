@@ -1,8 +1,8 @@
 package com.example.homework5.model;
 
+import com.example.homework5.status.TaskStatus;
 import jakarta.persistence.*;
 import lombok.Data;
-
 import java.time.LocalDateTime;
 
 @Data
@@ -16,11 +16,10 @@ public class Task {
     @Column(nullable = false)
     private String description;
     @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private TaskStatus status;
     @Column
     private LocalDateTime local_date_time = LocalDateTime.now();
 
-    public enum TaskStatus {
-        TEMP, NOT_STARTED, IN_PROGRESS, COMPLETED, DEAD // меньше 4 выкидывает ошибку java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds for length 3
-    }
+
 }
